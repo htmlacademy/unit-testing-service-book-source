@@ -1,0 +1,25 @@
+.pivot-settins {
+  .title {
+    margin-bottom: 60px;
+  }
+}
+
+.pivot-settins__wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  .form-filter:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.pivot-settins__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .button:not(:last-child) {
+    margin-right: 30px;
+  }
+}

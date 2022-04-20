@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Список страниц</title>
+
+  <style>
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    a {
+      color: rgb(10, 10, 175);
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 7px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      ol {
+        padding-left: 20px;
+      }
+
+      ol li {
+        margin-bottom: 15px;
+      }
+
+      .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <main>
+    <div class="container">
+      <svg style="width: 150px; height: 150px; fill: #6f8ae7;" fill="none"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20Zm-1-11v6h2v-6h-2Zm0-4v2h2V7h-2Z" />
+      </svg>
+
+      <h1>Список страниц и компонентов</h1>
+      <ol>
+        <li>
+          <a href="components.html">UI Kit — components.html</a>
+        </li>
+        <li>
+          <a href="service-log.html">Журнал обслуживания — service-log.html</a>
+        </li>
+        <li>
+          <a href="pivot-table.html">Сводная таблица — pivot.html</a>
+        </li>
+        <li>
+          <a href="not-configured.html">Сводная таблица не настроена —
+            not-configured.html</a>
+        </li>
+        <li>
+          <a href="pivot-settings.html">Настройки сводной таблицы —
+            pivot-settings.html</a>
+        </li>
+      </ol>
+    </div>
+  </main>
+
+</body>
+
+</html>

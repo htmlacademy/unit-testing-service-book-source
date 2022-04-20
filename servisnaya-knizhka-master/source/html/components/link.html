@@ -1,0 +1,10 @@
+<a href="#"
+  class="link@@if (context.mod) {link--@@mod}@@if (context.className) {@@className}">
+  @@if (context.icon) {
+  <svg width="@@width" height="@@height">
+    <use xlink:href="#@@icon"></use>
+  </svg>
+  }
+
+  <span>@@text</span>
+</a>

@@ -1,0 +1,34 @@
+<div class="pivot-settins">
+  <h2 class="title title--page">Настройки сводной таблицы</h2>
+
+  <div class="pivot-settins__wrap">
+    @@include("source/html/components/form-filter.html", {
+    "title": "Значения строк",
+    "type": "listValues",
+    "mod": "rows-filter"
+    })
+
+    @@include("source/html/components/form-filter.html", {
+    "title": "Значения столбцов",
+    "type": "listValues",
+    "mod": "cols-filter"
+    })
+
+    @@include("source/html/components/form-filter.html", {
+    "title": "Группирующая функция",
+    "type": "listGroupingFunc",
+    "mod": "func-filter"
+    })
+  </div>
+
+  <div class="pivot-settins__footer">
+    @@include("source/html/components/button.html", {
+    "mod": "lighter",
+    "text": "Отменить"
+    })
+    @@include("source/html/components/button.html", {
+    "mod": "fill",
+    "text": "Применить"
+    })
+  </div>
+</div>

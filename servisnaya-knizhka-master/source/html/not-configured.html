@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Сводная таблица не настроена</title>
+
+</head>
+
+<body>
+
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
+
+  <div class="wrapper">
+    @@include("source/html/base/header.html", {
+    "headerActiveLinkIndex": 1
+    })
+
+    <main class="not-configured">
+      <div class="container">
+        <div class="not-configured__wrap">
+          <svg width="200" height="200">
+            <use xlink:href="#icon-smile"></use>
+          </svg>
+
+          <h1 class="title title--page">Сводная таблица не настроена</h1>
+
+          <p>Пожалуйста, выберите поля для группировки журнала</p>
+
+          @@include("source/html/components/button.html", {
+          "mod": "fill",
+          "text": "Настройки сводной таблицы",
+          "icon": "icon-settings",
+          "width": "24",
+          "height": "24",
+          "dataset": "data-modal='pivot-settings'"
+          })
+        </div>
+      </div>
+    </main>
+
+    @@include("source/html/base/modal.html", {
+    "name": "pivot-settings"
+    })
+  </div>
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

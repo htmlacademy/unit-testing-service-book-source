@@ -1,0 +1,33 @@
+<header class="header @@if (context.mod) { header--@@mod }">
+  <div class="container header__wrapper">
+    <nav class="main-nav">
+      <div class="main-nav__wrapper">
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a @@if (context.headerActiveLinkIndex !==0) { href="#" }
+              class="link  @@if (context.mod) {link--@@mod} @@if (context.className) {@@className} @@if (context.headerActiveLinkIndex  === 0) {link--active}">
+
+              <span>Журнал обслуживания</span>
+            </a>
+          </li>
+          <li class="main-nav__item">
+            <a @@if (context.headerActiveLinkIndex !==1) { href="#" }
+              class="link  @@if (context.mod) {link--@@mod} @@if (context.className) {@@className} @@if (context.headerActiveLinkIndex  === 1) {link--active}">
+
+              <span>Сводная таблица</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="header__terms">
+      @@include("source/html/components/link.html", {
+      "text": "Условия использования",
+      "icon": "icon-info",
+      "width": "22",
+      "height": "22"
+      })
+    </div>
+  </div>
+</header>

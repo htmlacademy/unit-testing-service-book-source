@@ -1,0 +1,9 @@
+<button class="button @@if (context.mod) {button--@@mod}" @@if (context.dataset)
+  {@@dataset}>
+  @@if (context.icon) {
+  <svg width="@@width" height="@@height">
+    <use xlink:href="#@@icon"></use>
+  </svg>
+  }
+  <span>@@text</span>
+</button>

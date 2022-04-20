@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Компоненты</title>
+
+  <style>
+    main>.container {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .components-backwards {
+      display: inline-block;
+      margin-bottom: 10px;
+      margin-left: 7px;
+    }
+
+    .components-backwards span:first-child {
+      position: relative;
+      top: -3px;
+
+      display: inline-block;
+      margin-right: 15px;
+
+      font-size: 16px;
+      line-height: 24px;
+      vertical-align: top;
+
+      transform: scale(2);
+    }
+
+    .components-backwards span:last-child {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .components-backwards+h1 {
+      margin-bottom: 0;
+    }
+
+    .container>section {
+      padding: 20px 0;
+    }
+
+    .components-links .link,
+    .link {
+      display: inline-flex;
+      width: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
+
+  <div class="wrapper">
+    @@include("source/html/base/header.html")
+
+    <main>
+      <div class="container">
+        <a class="components-backwards" href="index.html">
+          <span>&larr;</span>
+          <span>вернуться на разводящую</span>
+        </a>
+        <h1>Компоненты, используемые в вёрстке</h1>
+
+        <section>
+          <h2>Кнопки</h2>
+
+          <p>.button \ .button--fill</p>
+          <div>
+            @@include("source/html/components/button.html", {
+            "mod": "fill",
+            "text": "Синяя кнопка"
+            })
+          </div>
+
+          <p>.button \ .button--fill</p>
+          <p style="color: red;">С иконкой</p>
+          <div>
+            @@include("source/html/components/button.html", {
+            "mod": "fill",
+            "text": "Синяя кнопка с иконкой",
+            "icon": "icon-info",
+            "width": "24",
+            "height": "24"
+            })
+          </div>
+
+          <p>.button \ .button--lighter</p>
+          <div>
+            @@include("source/html/components/button.html", {
+            "mod": "lighter",
+            "text": "Светлая кнопка"
+            })
+          </div>
+
+          <p>.button \ .button--gradient</p>
+          <div>
+            @@include("source/html/components/button.html", {
+            "mod": "gradient",
+            "text": "Кнопка с градиентом"
+            })
+          </div>
+        </section>
+
+        <section class="components-links">
+          <h2>Ссылки</h2>
+          <p>.link</p>
+          <div>
+            @@include("source/html/components/link.html", {
+            "text": "Ссылка"
+            })
+          </div>
+          <div style="background: linear-gradient(90deg, #e7f0ff 0%, #ffe0f6 75%); padding: 10px; margin: 10px 0;">
+            <p>.link \ .link--active</p>
+            <div>
+              @@include("source/html/components/link.html", {
+              "mod": "active",
+              "text": "Активная ссылка"
+              })
+            </div>
+          </div>
+
+          <p>.link</p>
+          <p style="color: red;">Ссылка с иконкой</p>
+          <div>
+            @@include("source/html/components/link.html", {
+            "text": "Условия использования",
+            "icon": "icon-settings",
+            "width": "22",
+            "height": "22"
+            })
+          </div>
+        </section>
+
+        <section>
+          <h2>Заголовки</h2>
+
+          <p>.title \ .title--page</p>
+          <div>
+            <h1 class="title title--page">Заголовок h1</h1>
+          </div>
+        </section>
+
+        <section>
+          <h2>Формы</h2>
+
+          <p>.form-filter</p>
+          <div>
+            @@include("source/html/components/form-filter.html", {
+            "title": "Значения строк",
+            "type": "listValues",
+            "mod": "rows-filter"
+            })
+          </div>
+
+          <h2>Выпадащий список</h2>
+          <p style="color: red;">Для элементов, содержацих вложенный список
+            используется модификатор <b>form-filter__item--sublist</b></p>
+          <p style="color: red;">Раскрыть список: form-filter__item--sublist
+            <b>is-open</b>
+          </p>
+          <div>
+            <form class="form-filter" action="/">
+              <h3 class="form-filter__title">
+                Группирующая функция
+              </h3>
+              <button class="form-filter__reset" type="reset">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path
+                    d="m12 10.59 4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41L12 10.59Z">
+                  </path>
+                </svg>
+                <span>Сбросить выбор</span>
+              </button>
+              <ul class="form-filter__list">
+                <li class="form-filter__item form-filter__item--sublist is-open">
+                  <span>
+                    Максимум
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="m12 13.17 4.95-4.95 1.41 1.42L12 16 5.64 9.64l1.41-1.42L12 13.17Z">
+                      </path>
+                    </svg>
+                  </span>
+                  <ul class="form-filter__list">
+                    <li class="form-filter__item">
+                      <label for="func-filter-0-0" tabindex="0">
+                        <input id="func-filter-0-0" type="radio" name="list-values">
+                        <span>Марка</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-1-0" tabindex="0">
+                        <input id="func-filter-1-0" type="radio" name="list-values">
+                        <span>Модель</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-2-0" tabindex="0">
+                        <input id="func-filter-2-0" type="radio" name="list-values">
+                        <span>Водитель</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-3-0" tabindex="0">
+                        <input id="func-filter-3-0" type="radio" name="list-values">
+                        <span>Тех-центр</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-4-0" tabindex="0">
+                        <input id="func-filter-4-0" type="radio" name="list-values">
+                        <span>Вид обслуживания</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-5-0" tabindex="0">
+                        <input id="func-filter-5-0" type="radio" name="list-values">
+                        <span>Сумма, ₽</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-6-0" tabindex="0">
+                        <span>Пробег</span>
+                        <input id="func-filter-6-0" type="radio" name="list-values">
+                      </label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="form-filter__item form-filter__item--sublist">
+                  <span>
+                    Среднее
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="m12 13.17 4.95-4.95 1.41 1.42L12 16 5.64 9.64l1.41-1.42L12 13.17Z">
+                      </path>
+                    </svg>
+                  </span>
+                  <ul class="form-filter__list">
+                    <li class="form-filter__item">
+                      <label for="func-filter-0-1" tabindex="0">
+                        <input id="func-filter-0-1" type="radio" name="list-values">
+                        <span>Марка</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-1-1" tabindex="0">
+                        <input id="func-filter-1-1" type="radio" name="list-values">
+                        <span>Модель</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-2-1" tabindex="0">
+                        <input id="func-filter-2-1" type="radio" name="list-values">
+                        <span>Водитель</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-3-1" tabindex="0">
+                        <input id="func-filter-3-1" type="radio" name="list-values">
+                        <span>Тех-центр</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-4-1" tabindex="0">
+                        <input id="func-filter-4-1" type="radio" name="list-values">
+                        <span>Вид обслуживания</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-5-1" tabindex="0">
+                        <input id="func-filter-5-1" type="radio" name="list-values">
+                        <span>Сумма, ₽</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-6-1" tabindex="0">
+                        <input id="func-filter-6-1" type="radio" name="list-values">
+                        <span>Пробег</span>
+                      </label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="form-filter__item form-filter__item--sublist">
+                  <span>
+                    Соединить список
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="m12 13.17 4.95-4.95 1.41 1.42L12 16 5.64 9.64l1.41-1.42L12 13.17Z">
+                      </path>
+                    </svg>
+                  </span>
+                  <ul class="form-filter__list">
+                    <li class="form-filter__item">
+                      <label for="func-filter-0-2" tabindex="0">
+                        <input id="func-filter-0-2" type="radio" name="list-values">
+                        <span>Марка</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-1-2" tabindex="0">
+                        <input id="func-filter-1-2" type="radio" name="list-values">
+                        <span>Модель</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-2-2" tabindex="0">
+                        <input id="func-filter-2-2" type="radio" name="list-values">
+                        <span>Водитель</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-3-2" tabindex="0">
+                        <input id="func-filter-3-2" type="radio" name="list-values">
+                        <span>Тех-центр</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-4-2" tabindex="0">
+                        <input id="func-filter-4-2" type="radio" name="list-values">
+                        <span>Вид обслуживания</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-5-2" tabindex="0">
+                        <input id="func-filter-5-2" type="radio" name="list-values">
+                        <span>Сумма, ₽</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-6-2" tabindex="0">
+                        <input id="func-filter-6-2" type="radio" name="list-values">
+                        <span>Пробег</span>
+                      </label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="form-filter__item form-filter__item--sublist">
+                  <span>
+                    Сумма
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="m12 13.17 4.95-4.95 1.41 1.42L12 16 5.64 9.64l1.41-1.42L12 13.17Z">
+                      </path>
+                    </svg>
+                  </span>
+                  <ul class="form-filter__list">
+                    <li class="form-filter__item">
+                      <label for="func-filter-0-3" tabindex="0">
+                        <input id="func-filter-0-3" type="radio" name="list-values">
+                        <span>Марка</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-1-3" tabindex="0">
+                        <input id="func-filter-1-3" type="radio" name="list-values">
+                        <span>Модель</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-2-3" tabindex="0">
+                        <input id="func-filter-2-3" type="radio" name="list-values">
+                        <span>Водитель</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-3-3" tabindex="0">
+                        <input id="func-filter-3-3" type="radio" name="list-values">
+                        <span>Тех-центр</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-4-3" tabindex="0">
+                        <input id="func-filter-4-3" type="radio" name="list-values">
+                        <span>Вид обслуживания</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-5-3" tabindex="0">
+                        <input id="func-filter-5-3" type="radio" name="list-values">
+                        <span>Сумма, ₽</span>
+                      </label>
+                    </li>
+                    <li class="form-filter__item">
+                      <label for="func-filter-6-3" tabindex="0">
+                        <input id="func-filter-6-3" type="radio" name="list-values">
+                        <span>Пробег</span>
+                      </label>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </section>
+
+        <!-- Всегда оставляйте коммент ниже, чтобы удобно было копипастить -->
+        <!-- <section>
+        <h2>Название компонента или группы компонентов</h2>
+
+        <p>Класс компонента \ модификаторы</p>
+        <p style="color: red;">При необходимости, подсказки \ предупреждение \
+          важная информация</p>
+        <div>Компонент</div>
+      </section> -->
+      </div>
+    </main>
+
+    @@include("source/html/base/footer.html")
+  </div>
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<form class="form-filter" action="/">
+  <h3 class="form-filter__title">
+    @@title
+  </h3>
+
+  <button class="form-filter__reset" type="reset">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path
+        d="m12 10.59 4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41L12 10.59Z" />
+    </svg>
+    <span>Сбросить выбор</span>
+  </button>
+
+  <ul class="form-filter__list">
+    @@if (context.type === "listValues") {
+    @@for (var i = 0; i < listValues.length; i++) { <li class="form-filter__item">
+      <label for=`+ mod + `-` + i + ` tabindex="0">
+        <input id=`+ mod + `-` + i +` type="radio" name="list-values">
+        <span>`+ listValues[i] + `</span>
+      </label>
+      </li>
+      } }
+
+      @@if (context.type === "listGroupingFunc") {
+      @@for (var i = 0; i < listGroupingFunc.length; i++) { <li class="form-filter__item form-filter__item--sublist">
+        <span>
+          `+
+          listGroupingFunc[i] +`
+          <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="m12 13.17 4.95-4.95 1.41 1.42L12 16 5.64 9.64l1.41-1.42L12 13.17Z" />
+          </svg>
+        </span>
+
+        <ul class="form-filter__list">
+          <li class="form-filter__item">
+            <label tabindex="0">
+              <input id=`+ mod + `-0-` + i +` type="radio" name="list-values">
+              <span>Марка</span>
+            </label>
+          </li>
+          <li class="form-filter__item">
+
+            <label for=`+ mod + `-1-` + i +` tabindex="0">
+              <input id=`+ mod + `-1-` + i +` type="radio" name="list-values">
+              <span>Модель</span>
+            </label>
+          </li>
+          <li class="form-filter__item">
+            <label for=`+ mod + `-2-` + i +` tabindex="0">
+              <input id=`+ mod + `-2-` + i +` type="radio" name="list-values">
+              <span>Водитель</span>
+            </label>
+          </li>
+          <li class="form-filter__item">
+            <label for=`+ mod + `-3-` + i +` tabindex="0">
+              <input id=`+ mod + `-3-` + i +` type="radio" name="list-values">
+              <span>Тех-центр</span>
+            </label>
+          </li>
+          <li class="form-filter__item">
+            <label for=`+ mod + `-4-` + i +` tabindex="0">
+              <input id=`+ mod + `-4-` + i +` type="radio" name="list-values">
+              <span>Вид обслуживания</span>
+            </label>
+          </li>
+          <li class="form-filter__item">
+            <label for=`+ mod + `-5-` + i +` tabindex="0">
+              <input id=`+ mod + `-5-` + i +` type="radio" name="list-values">
+              <span>Сумма, ₽</span>
+            </label>
+          </li>
+          <li class="form-filter__item">
+            <label for=`+ mod + `-6-` + i +` tabindex="0">
+              <input id=`+ mod + `-6-` + i +` type="radio" name="list-values">
+              <span>Пробег</span>
+            </label>
+          </li>
+        </ul>
+
+        </li>
+        }
+        }
+  </ul>
+</form>
