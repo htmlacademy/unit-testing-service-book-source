@@ -1,0 +1,88 @@
+.table-pivot {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 55px;
+
+  .table {
+    margin-bottom: 0;
+  }
+
+  .table__cell {
+    width: 210px;
+    max-width: 210px;
+    min-width: 180px;
+  }
+
+  th {
+    padding-top: 15px;
+    padding-bottom: 19px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  th:first-child,
+  td:first-child {
+    min-width: 240px;
+  }
+
+  .table__row:first-child th {
+    opacity: 1;
+    text-transform: none;
+  }
+}
+
+.table-pivot__values {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-pivot__values--left {
+  max-width: 350px;
+  width: 100%;
+  margin-right: 10px;
+  flex-shrink: 0;
+
+  .table-pivot__title {
+    align-self: flex-start;
+    padding-left: 60px;
+  }
+
+  .table,
+  .table__table {
+    width: 100%;
+  }
+
+  @include viewport--lg {
+    .table-pivot__title {
+      padding-left: 30px;
+    }
+  }
+}
+
+.table-pivot__values--right {
+  width: calc(100% - 360px);
+
+  .table {
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .table__table {
+    table-layout: auto;
+    white-space: nowrap;
+  }
+}
+
+.table-pivot__title {
+  margin: 0;
+  margin-bottom: 15px;
+
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  opacity: 0.5;
+}

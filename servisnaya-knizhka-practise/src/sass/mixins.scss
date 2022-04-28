@@ -1,0 +1,189 @@
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+// Desktop first
+
+@mixin viewport--xl {
+  @media (max-width: $viewport--xxl - 1) {
+    @content;
+  }
+}
+
+@mixin viewport--lg {
+  @media (max-width: $viewport--xl - 1) {
+    @content;
+  }
+}
+
+@mixin viewport--md {
+  @media (max-width: $viewport--lg - 1) {
+    @content;
+  }
+}
+
+@mixin viewport--sm {
+  @media (max-width: $viewport--md - 1) {
+    @content;
+  }
+}
+
+@mixin hover-table-row {
+  transition: background-color $default-transition-settings;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color-cornflower-blue, 0.5);
+  }
+}
+
+@mixin hover-link {
+  transition: opacity $default-transition-settings;
+  transform: translate3d(0, 0, 0);
+
+  svg {
+    backface-visibility: hidden;
+    transition: fill $default-transition-settings;
+  }
+
+  &:focus {
+    outline: none;
+    border: none;
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    svg {
+      fill: $color-cornflower-blue;
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+@mixin hover-link-active {
+  transition: color $default-transition-settings, background-color $default-transition-settings;
+
+  &:focus {
+    color: $color-cornflower-blue;
+  }
+
+  &:hover {
+    background-color: $color-cornflower-blue;
+    color: $color-default-white;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+@mixin button-fill {
+  svg {
+    transition: fill $default-transition-settings;
+  }
+
+  &:focus {
+    outline: none;
+    border: none;
+    color: rgba($color-default-black, 0.7);
+  }
+
+  &:hover {
+    color: $color-default-black;
+    background-color: rgba($color-cornflower-blue, 0.2);
+
+    svg {
+      fill: $color-cornflower-blue;
+    }
+  }
+
+  &:active {
+    background-color: $color-cornflower-blue;
+    color: $color-default-white;
+
+    svg {
+      fill: $color-default-white;
+    }
+  }
+}
+
+@mixin button-lighter {
+  &:focus {
+    outline: none;
+    border: none;
+    opacity: 1;
+  }
+
+  &:hover {
+    color: $color-default-white;
+    background-color: $color-cornflower-blue;
+    opacity: 1;
+  }
+
+  &:active {
+    color: $color-cornflower-blue;
+    background-color: rgba($color-cornflower-blue, 0.2);
+  }
+}
+
+@mixin button-gradient {
+  position: relative;
+  overflow: hidden;
+
+  span {
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background: $solitude-to-lavender-reverse;
+    transition: opacity $default-transition-settings;
+    z-index: 0;
+  }
+
+  &:focus {
+    outline: none;
+    border: none;
+    color: $color-cornflower-blue;
+  }
+
+  &:hover {
+    color: $color-default-black;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    color: $color-cornflower-blue;
+  }
+}
+
+@mixin hover-list-item {
+  transition: opacity $default-transition-settings, background-color $default-transition-settings;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $color-alice-blue;
+  }
+
+  &:active {
+    background-color: $color-solitude;
+    opacity: 1;
+  }
+}

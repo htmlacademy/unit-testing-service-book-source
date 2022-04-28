@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+
+  background: $solitude-to-lavender;
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__terms {
+    max-width: 320px;
+    padding: 10px 0;
+  }
+}

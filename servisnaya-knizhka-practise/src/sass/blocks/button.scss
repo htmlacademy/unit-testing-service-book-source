@@ -1,0 +1,54 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 28px 40px;
+
+  font-family: $font-family--base;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  color: $color-default-black;
+  background: $color-transparent;
+  transition: color $default-transition-settings, background-color $default-transition-settings, opacity $default-transition-settings;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    fill: currentColor;
+  }
+
+  &--more {
+    width: 100%;
+  }
+}
+
+.button--fill {
+  color: $color-default-white;
+  background-color: $color-cornflower-blue;
+
+  @include button-fill;
+}
+
+.button--lighter {
+  color: $color-default-black;
+  background-color: rgba($color-cornflower-blue, 0.2);
+  opacity: 0.6;
+
+  @include button-lighter;
+}
+
+.button--gradient {
+  padding: 18px 40px;
+  background: $solitude-to-lavender;
+
+  @include button-gradient;
+}

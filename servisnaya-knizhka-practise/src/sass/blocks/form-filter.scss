@@ -1,0 +1,179 @@
+.form-filter {
+  position: relative;
+
+  max-width: 440px;
+  width: 100%;
+  min-height: 486px;
+  max-height: 486px;
+  height: auto;
+
+  font-family: inherit;
+  color: $color-default-black;
+
+  border: 1px solid rgba($color-default-black, 0.1);
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.form-filter__title {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 60px;
+  height: auto;
+  z-index: 2;
+
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 18px;
+
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+
+  background: $solitude-to-lavender;
+}
+
+.form-filter__reset {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 30px;
+
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: left;
+  color: inherit;
+
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    fill: currentColor;
+  }
+
+  @include hover-link;
+}
+
+.form-filter__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+
+.form-filter__item {
+  position: relative;
+  z-index: 1;
+
+  label {
+    display: contents;
+    padding: 10px 30px;
+
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    text-align: left;
+    color: inherit;
+    cursor: pointer;
+
+    background-color: $color-default-white;
+
+    @include hover-list-item;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type=radio]+span {
+    display: flex;
+    padding: 10px 30px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    text-align: left;
+    color: inherit;
+    cursor: pointer;
+
+    background-color: $color-default-white;
+
+    @include hover-list-item;
+  
+  }
+
+  input[type="radio"]:checked + span {
+    background-color: $color-solitude;
+  }
+}
+
+.form-filter__item--sublist {
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px 0;
+
+  cursor: pointer;
+  background-color: $color-default-white;
+
+  @include hover-list-item;
+
+  .form-filter__list {
+    transition: transform height $default-transition-settings;
+    transform: translateY(-100%);
+    height: 0;
+  }
+
+  span {
+    display: flex;
+    width: 100%;
+    padding: 0 30px;
+
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    text-align: left;
+    color: inherit;
+  }
+
+  label {
+    padding-left: 40px;
+    padding-right: 40px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  svg {
+    fill: currentColor;
+    margin-left: auto;
+    transform: rotate(0);
+  }
+
+  &.is-open {
+    background-color: $color-alice-blue;
+  }
+
+  &.is-open svg {
+    transform: rotate(180deg);
+  }
+
+  &.is-open .form-filter__list {
+    transform: translateY(0);
+    height: 100%;
+  }
+}

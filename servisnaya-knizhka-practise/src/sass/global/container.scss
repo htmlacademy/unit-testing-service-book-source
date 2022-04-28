@@ -1,0 +1,11 @@
+.container {
+  display: block;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 60px;
+
+  @include viewport--lg {
+    padding: 0 30px;
+  }
+}

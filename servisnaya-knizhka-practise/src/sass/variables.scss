@@ -1,0 +1,48 @@
+// Colors
+//---------------------------------
+// https://www.htmlcsscolor.com/hex/334482
+
+// Default
+
+$color-default-black:             #000000;
+$color-default-white:             #ffffff;
+$color-transparent:               rgba(255, 255, 255, 0);
+
+// Base
+
+$color-solitude:                  #e7f0ff;
+$color-lavender-blush:            #ffe0f6;
+$color-cornflower-blue:           #6f8ae7;
+$color-alice-blue:                #f4f6f9;
+
+// Gradient
+
+$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$solitude-to-lavender:              linear-gradient(90deg, $color-solitude 0%, $color-lavender-blush 75%);
+$solitude-to-lavender-reverse:      linear-gradient(90deg, $color-lavender-blush 0%, $color-solitude 75%);
+
+// Typography
+//---------------------------------
+
+$font-family--base:                     "Manrope", "Arial", sans-serif;
+
+// Animation
+//---------------------------------
+
+$default-transition-settings:       0.3s ease;
+$modal-transition-settings:         0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+// Viewports
+//---------------------------------
+
+$viewport--sm:                      320px;
+$viewport--md:                      768px;
+$viewport--lg:                      1024px;
+$viewport--xl:                      1440px;
+$viewport--xxl:                     1920px;
+
+// Retina
+//---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;

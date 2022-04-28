@@ -1,0 +1,21 @@
+.main {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.main__setting-link {
+  max-width: 320px;
+  justify-content: flex-start;
+  padding-left: 0;
+  margin-bottom: 45px;
+}
+
+.linkmain__setting-link {
+  display: flex;
+  svg {
+    margin-right: 10px;
+    margin-top: 2px;
+  }
+}
